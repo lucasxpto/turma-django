@@ -1,0 +1,28 @@
+{% extends 'core/base.html' %}
+
+{% block title%}Turma | Cadastro{% endblock %}
+
+{% block content %}
+<div class="container max-w-3xl mx-auto bg-red-100 p-8 my-8 drop-shadow bg-white rounded">
+
+    <div class="flex justify-between items-center">
+        <div>
+            <h1 class="text-xl mb-8">Cadastrar turma</h1>
+        </div>
+        <div>
+            <a href="{% url 'turmas:listar' %}" class="button">Listar turmas</a>
+        </div>
+    </div>
+
+    <form action="" method="post">
+        <div class="grid grid-cols-1 gap-6">
+            {% csrf_token %}
+            {{ form.as_div }}
+            <div>
+                 <input type="submit" class="button" value="Salvar">
+            </div>
+        </div>
+    </form>
+</div>
+{% endblock %}
+

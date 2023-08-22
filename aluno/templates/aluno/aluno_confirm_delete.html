@@ -1,0 +1,26 @@
+{% extends 'core/base.html' %}
+
+{% block title%}Aluno | Remover{% endblock %}
+
+{% block content %}
+<div class="max-w-3xl mx-auto bg-red-100 p-8 my-8 drop-shadow bg-white rounded">
+
+    <h1 class="text-xl mb-8">Remover aluno?</h1>
+
+    <div>
+        <form id="form" action="" method="POST">
+            {% csrf_token %}
+            <a href="{% url 'alunos:listar' %}" class="button">
+                Não, cancelar
+            </a>
+
+            <button type="submit" class="button-red">
+                Sim, excluir
+            </button>
+
+        </form>
+    </div>
+
+</div>
+{% endblock %}
+
